@@ -8,7 +8,7 @@ using System;
 
 namespace Program
 {
-    class Math
+    class MathProgram
     {
         static void Main(string[] args)
         {
@@ -94,7 +94,31 @@ namespace Program
                         ib = Int32.Parse(sb);
 
                         r = Division(ia,ib);
-                        Console.WriteLine(sa," times ",sb," equals ",r);
+                        Console.WriteLine(sa," divided by ",sb," equals ",r);
+                        break;
+
+                    case 5: Console.WriteLine("You chose Comparing to get higher number");
+
+                        Console.WriteLine("Write the first number:");
+                        sa = Console.ReadLine();
+                        ia = Int32.Parse(sa);
+                        Console.WriteLine("Write the second number:");
+                        sb = Console.ReadLine();
+                        ib = Convert.ToInt32(sb);
+
+                        r = higherNum(ia,ib);
+                        Console.WriteLine(Convert.ToString(r), " is the higher number");
+                        break;
+
+                    case 6: Console.WriteLine("You chose Primary number check");
+
+                        Console.WriteLine("Write the number:");
+                        sa = Console.ReadLine();
+                        ia = Int32.Parse(sa);
+
+                        Boolean p = primaryCheck(ia);
+                        if(p) Console.WriteLine(sa, " is a prime number");
+                        else Console.WriteLine(sa, " is not a prime number");
                         break;
 
                         default:
@@ -118,6 +142,20 @@ namespace Program
         static int Division(int a, int b)
         {
             return a/b;
+        }
+        static int higherNum(int a, int b)
+        {
+            return Math.Max(a,b); // returns the higher
+        }
+        static Boolean primaryCheck(int a)
+        {
+        if (a <= 1){return false;}
+      
+        for (int i = 2; i* i <=a; i++) {
+            if (a % i == 0)  
+                return false;
+                }
+        return true;
         }
     }
 }
