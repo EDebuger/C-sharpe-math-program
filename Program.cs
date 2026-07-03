@@ -5,6 +5,7 @@ app.MapGet("/", () => "Hello World!");
 
 app.Run();*/
 using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Program
 {
@@ -16,11 +17,13 @@ namespace Program
             Console.WriteLine("Welcome to my math program");
 
             Boolean active1 = true;
+            mathMenu(active1);
         }
 
         static void mathMenu(Boolean status)
         {
             Console.WriteLine("Loading in...");
+            Console.WriteLine("");
 
             while(status)
             {
@@ -33,13 +36,14 @@ namespace Program
                 Console.WriteLine("6 - Is a primary number");
                 Console.WriteLine("7 - Are they equal");
                 Console.WriteLine("8 - Percentage");
-                Console.WriteLine("0.");
+                Console.WriteLine("0 - Exit program");
 
                 String sa;
                 int ia;
                 String sb;
                 int ib;
                 int r;
+                Boolean p;
 
                 string sc = Console.ReadLine();
                 int c = Int32.Parse(sc);
@@ -116,12 +120,46 @@ namespace Program
                         sa = Console.ReadLine();
                         ia = Int32.Parse(sa);
 
-                        Boolean p = primaryCheck(ia);
+                        p = primaryCheck(ia);
                         if(p) Console.WriteLine(sa, " is a prime number");
                         else Console.WriteLine(sa, " is not a prime number");
                         break;
 
-                        default:
+                    case 7: Console.WriteLine("You chose number comparison");
+
+                        Console.WriteLine("Write the first number:");
+                        sa = Console.ReadLine();
+                        ia = Int32.Parse(sa);
+
+                        Console.WriteLine("Write the second number:");
+                        sb = Console.ReadLine();
+                        ib = Int32.Parse(sa);
+
+                        p = equalNumbers(ia,ib);
+                        if(p) Console.WriteLine("They are the same");
+                        else Console.WriteLine("They are not the same");
+                        break;
+
+                    case 8: Console.WriteLine("You chose percentage calculation");
+
+                        Console.WriteLine("Write the first number:");
+                        sa = Console.ReadLine();
+                        ia = Int32.Parse(sa);
+
+                        Console.WriteLine("Write the second number:");
+                        sb = Console.ReadLine();
+                        ib = Int32.Parse(sa);
+
+                        double res = percentageCalc(ia,ib);
+                        Console.WriteLine(sa," Är ",res,"% av ",sb);
+                        
+                        break;
+
+                    case 0: Console.WriteLine("Goodbye~");
+                            status = false;
+                        break;
+
+                        default: Console.WriteLine("Incorrect input, try again"); Console.WriteLine("");
                         break; 
                 }
             }
@@ -156,6 +194,16 @@ namespace Program
                 return false;
                 }
         return true;
+        }
+        static Boolean equalNumbers(int a, int b)
+        {
+            Boolean e = (a==b)?  true : false; // if they are or aren't equal
+            return e;
+        }
+        static double percentageCalc(int a, int b)
+        {
+            double res;
+            return res = (a/b)*100;
         }
     }
 }

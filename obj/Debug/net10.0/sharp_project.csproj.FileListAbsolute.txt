@@ -26,3 +26,4 @@ c:\Users\ermid\Desktop\sharp_project\sharp_project\obj\Debug\net10.0\refint\shar
 c:\Users\ermid\Desktop\sharp_project\sharp_project\obj\Debug\net10.0\sharp_project.pdb
 C:\Users\ermid\Desktop\sharp_project\sharp_project\obj\Debug\net10.0\sharp_project.genruntimeconfig.cache
 C:\Users\ermid\Desktop\sharp_project\sharp_project\obj\Debug\net10.0\ref\sharp_project.dll
+c:\Users\ermid\Desktop\sharp_project\sharp_project\obj\Debug\net10.0\sharp_project.sourcelink.json
