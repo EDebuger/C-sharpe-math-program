@@ -44,130 +44,141 @@ namespace Program
                 int ib;
                 int r;
                 Boolean p;
+                int ms = 2000;
 
                 string sc = Console.ReadLine();
                 int c = Int32.Parse(sc);
 
                 switch(c)   {
-                    case 1: Console.WriteLine("You chose Addition");
-
-                        Console.WriteLine("Write the first number:");
-                        sa = Console.ReadLine();
-                        ia = Int32.Parse(sa);
-                        Console.WriteLine("Write the second number:");
-                        sb = Console.ReadLine();
-                        ib = Int32.Parse(sb);
-
-                        r = Addition(ia,ib);
-                        Console.WriteLine(sa," plus ",sb," equals ",r);
+                    case 1: Addition(); // better way to do this
                         break;
 
                     case 2: Console.WriteLine("You chose Subtraction");
 
                         Console.WriteLine("Write the first number:");
                         sa = Console.ReadLine();
-                        ia = Int32.Parse(sa);
+                        ia = Convert.ToInt32(sa);
                         Console.WriteLine("Write the second number:");
                         sb = Console.ReadLine();
-                        ib = Int32.Parse(sb);
+                        ib = Convert.ToInt32(sb);
 
                         r = Subctraction(ia,ib);
-                        Console.WriteLine(sa," minus ",sb," equals ",r);
+                        Console.WriteLine(sa+" minus "+sb+" equals "+r);
+                        Thread.Sleep(ms);
                         break;
                     
                     case 3: Console.WriteLine("You chose Multiplication");
 
                         Console.WriteLine("Write the first number:");
                         sa = Console.ReadLine();
-                        ia = Int32.Parse(sa);
+                        ia = Convert.ToInt32(sa);
                         Console.WriteLine("Write the second number:");
                         sb = Console.ReadLine();
-                        ib = Int32.Parse(sb);
+                        ib = Convert.ToInt32(sb);
 
                         r = Multiplication(ia,ib);
-                        Console.WriteLine(sa," times ",sb," equals ",r);
+                        Console.WriteLine(sa+" times "+sb+" equals "+r);
+                        Thread.Sleep(ms);
                         break;
 
                     case 4: Console.WriteLine("You chose Division");
 
                         Console.WriteLine("Write the first number:");
                         sa = Console.ReadLine();
-                        ia = Int32.Parse(sa);
+                        ia = Convert.ToInt32(sa);
                         Console.WriteLine("Write the second number:");
                         sb = Console.ReadLine();
-                        ib = Int32.Parse(sb);
+                        ib = Convert.ToInt32(sb);
 
                         r = Division(ia,ib);
-                        Console.WriteLine(sa," divided by ",sb," equals ",r);
+                        Console.WriteLine(sa+" divided by "+sb+" equals "+r);
+                        Thread.Sleep(ms);
                         break;
 
                     case 5: Console.WriteLine("You chose Comparing to get higher number");
 
                         Console.WriteLine("Write the first number:");
                         sa = Console.ReadLine();
-                        ia = Int32.Parse(sa);
+                        ia = Convert.ToInt32(sa);
                         Console.WriteLine("Write the second number:");
                         sb = Console.ReadLine();
                         ib = Convert.ToInt32(sb);
 
                         r = higherNum(ia,ib);
                         Console.WriteLine(Convert.ToString(r), " is the higher number");
+                        Thread.Sleep(ms);
                         break;
 
                     case 6: Console.WriteLine("You chose Primary number check");
 
                         Console.WriteLine("Write the number:");
                         sa = Console.ReadLine();
-                        ia = Int32.Parse(sa);
+                        ia = Convert.ToInt32(sa);
 
                         p = primaryCheck(ia);
-                        if(p) Console.WriteLine(sa, " is a prime number");
-                        else Console.WriteLine(sa, " is not a prime number");
+                        if(p) Console.WriteLine(sa+" is a prime number");
+                        else Console.WriteLine(sa+" is not a prime number");
+                        Thread.Sleep(ms);
                         break;
 
                     case 7: Console.WriteLine("You chose number comparison");
 
                         Console.WriteLine("Write the first number:");
                         sa = Console.ReadLine();
-                        ia = Int32.Parse(sa);
+                        ia = Convert.ToInt32(sa);
 
                         Console.WriteLine("Write the second number:");
                         sb = Console.ReadLine();
-                        ib = Int32.Parse(sa);
+                        ib = Convert.ToInt32(sa);
 
                         p = equalNumbers(ia,ib);
                         if(p) Console.WriteLine("They are the same");
                         else Console.WriteLine("They are not the same");
+                        Thread.Sleep(ms);
                         break;
 
                     case 8: Console.WriteLine("You chose percentage calculation");
 
                         Console.WriteLine("Write the first number:");
                         sa = Console.ReadLine();
-                        ia = Int32.Parse(sa);
+                        ia = Convert.ToInt32(sa);
 
                         Console.WriteLine("Write the second number:");
                         sb = Console.ReadLine();
-                        ib = Int32.Parse(sa);
+                        ib = Convert.ToInt32(sa);
 
                         double res = percentageCalc(ia,ib);
-                        Console.WriteLine(sa," Är ",res,"% av ",sb);
-                        
+                        Console.WriteLine(sa+" Är "+res+"% av "+sb);
+                        Thread.Sleep(ms);
                         break;
 
                     case 0: Console.WriteLine("Goodbye~");
+                            Thread.Sleep(1000);
                             status = false;
                         break;
 
                         default: Console.WriteLine("Incorrect input, try again"); Console.WriteLine("");
+                        Thread.Sleep(ms);
                         break; 
                 }
             }
         }
 
-        static int Addition(int a, int b)
+        static void Addition()
         {
-            return a+b;
+            Console.WriteLine("You chose Addition");
+
+                        Console.WriteLine("Write the first number:");
+                        string sa = Console.ReadLine();
+                        int ia = Convert.ToInt32(sa);
+                        Console.WriteLine("Write the second number:");
+                        string sb = Console.ReadLine();
+                        int ib = Convert.ToInt32(sb);
+
+                        int r = 0; r = ia+ib;
+                        if(r!=0) {Console.WriteLine(sa+" plus "+sb+" equals "+r);}
+                        else {Console.WriteLine("Got nothing");}
+                        Thread.Sleep(2000);
         }
         static int Subctraction(int a, int b)
         {
@@ -202,8 +213,8 @@ namespace Program
         }
         static double percentageCalc(int a, int b)
         {
-            double res;
-            return res = (a/b)*100;
+            double calc = a/b;
+            return _ = calc*100;
         }
     }
 }
