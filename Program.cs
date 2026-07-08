@@ -90,8 +90,8 @@ namespace Program
                         sb = Console.ReadLine();
                         ib = Convert.ToInt32(sb);
 
-                        r = Division(ia,ib);
-                        Console.WriteLine(sa+" divided by "+sb+" equals "+r);
+                        double d = Division(ia,ib);
+                        Console.WriteLine(sa+" divided by "+sb+" equals "+d);
                         Thread.Sleep(ms);
                         break;
 
@@ -145,7 +145,7 @@ namespace Program
 
                         Console.WriteLine("Write the second number:");
                         sb = Console.ReadLine();
-                        ib = Convert.ToInt32(sa);
+                        ib = Convert.ToInt32(sb);
 
                         double res = percentageCalc(ia,ib);
                         Console.WriteLine(sa+" Är "+res+"% av "+sb);
@@ -188,9 +188,9 @@ namespace Program
         {
             return a*b;
         }
-        static int Division(int a, int b)
+        static double Division(int a, int b)
         {
-            return a/b;
+            return (double)a/(double)b;
         }
         static int higherNum(int a, int b)
         {
@@ -213,8 +213,9 @@ namespace Program
         }
         static double percentageCalc(int a, int b)
         {
-            double calc = a/b;
-            return _ = calc*100;
+            Console.WriteLine(a/b);
+            double calc = (double)a/(double)b;
+            return calc*(double)100;
         }
     }
 }
