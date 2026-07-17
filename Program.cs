@@ -188,9 +188,12 @@ namespace Program
         {
             return a*b;
         }
-        static double Division(int a, int b)
+        static double Division(int a, int b) 
         {
-            return (double)a/(double)b;
+            try {return (double)a/(double)b;}
+            catch (DivideByZeroException) 
+            {Console.WriteLine("Did you seriously write in a zero?"); return 0;}
+            
         }
         static int higherNum(int a, int b)
         {
