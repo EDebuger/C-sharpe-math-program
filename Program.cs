@@ -6,6 +6,8 @@ app.MapGet("/", () => "Hello World!");
 app.Run();*/
 using System;
 using System.Reflection.Metadata.Ecma335;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace Program
 {
@@ -221,4 +223,13 @@ namespace Program
             return calc*(double)100;
         }
     }
+
+
+        private void label1_Click(object sender, EventArgs e)
+
+        {
+
+            
+
+        }
 }
