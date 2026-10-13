@@ -28,6 +28,8 @@ namespace Program
         /// </summary>
         private void InitializeComponent()
         {
+            this.linklabel1 = new System.Windows.Forms.LinkLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -67,11 +69,33 @@ namespace Program
             this.label1.type = "Label";
             this.label1.Font = "new System.Drawing.Font(\"Microsoft Sans Serif\", 20F)";
             this.panel1.Controls.Add(this.label1);
+            
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(200, 112);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 232);
+            this.panel2.TabIndex = 2;
+            this.panel2.Text = "panel2";
+            this.panel1.Controls.Add(this.panel2);
+            
+            // 
+            // linklabel1
+            // 
+            this.linklabel1.Location = new System.Drawing.Point(48, 32);
+            this.linklabel1.Name = "linklabel1";
+            this.linklabel1.Size = new System.Drawing.Size(88, 40);
+            this.linklabel1.TabIndex = 1;
+            this.linklabel1.Text = "linklabel1";
+            this.panel2.Controls.Add(this.linklabel1);
             this.ResumeLayout(false);
         }
 
         #endregion
     
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;}
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.LinkLabel linklabel1;}
 }

@@ -9,12 +9,9 @@ using System.Reflection.Metadata.Ecma335;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace Program
-{
-    class MathProgram
-    {
-        static void Main(string[] args)
-        {
+namespace Program {
+    class MathProgram {
+        static void Main(string[] args) {
             Console.WriteLine("Hey");
             Console.WriteLine("Welcome to my math program");
 
@@ -22,13 +19,11 @@ namespace Program
             mathMenu(active1);
         }
 
-        static void mathMenu(Boolean status)
-        {
+        static void mathMenu(Boolean status) {
             Console.WriteLine("Loading in...");
             Console.WriteLine("");
 
-            while(status)
-            {
+            while(status) {
                 Console.WriteLine("===Choose an option===");
                 Console.WriteLine("1 - Addition");
                 Console.WriteLine("2 - Subtraction");
@@ -166,8 +161,7 @@ namespace Program
             }
         }
 
-        static void Addition()
-        {
+        static void Addition() {
             Console.WriteLine("You chose Addition");
 
                         Console.WriteLine("Write the first number:");
@@ -182,27 +176,25 @@ namespace Program
                         else {Console.WriteLine("Got nothing");}
                         Thread.Sleep(2000);
         }
-        static int Subctraction(int a, int b)
-        {
+        static int Subctraction(int a, int b) {
             return a-b;
         }
-        static int Multiplication(int a, int b)
-        {
+
+        static int Multiplication(int a, int b) {
             return a*b;
         }
-        static double Division(int a, int b) 
-        {
+
+        static double Division(int a, int b) {
             try {return (double)a/(double)b;}
             catch (DivideByZeroException) 
-            {Console.WriteLine("Did you seriously write in a zero?"); return 0;}
-            
+            {Console.WriteLine("Did you seriously write in a zero?"); return 0;}  
         }
-        static int higherNum(int a, int b)
-        {
+        
+        static int higherNum(int a, int b) {
             return Math.Max(a,b); // returns the higher
         }
-        static Boolean primaryCheck(int a)
-        {
+
+        static Boolean primaryCheck(int a) {
         if (a <= 1){return false;}
       
         for (int i = 2; i* i <=a; i++) {
@@ -211,19 +203,19 @@ namespace Program
                 }
         return true;
         }
-        static Boolean equalNumbers(int a, int b)
-        {
+
+        static Boolean equalNumbers(int a, int b) {
             Boolean e = (a==b)?  true : false; // if they are or aren't equal
             return e;
         }
-        static double percentageCalc(int a, int b)
-        {
+
+        static double percentageCalc(int a, int b) {
             Console.WriteLine(a/b);
             double calc = (double)a/(double)b;
             return calc*(double)100;
         }
-    }
-
+    
+    
 
         private void label1_Click(object sender, EventArgs e)
 
@@ -231,5 +223,31 @@ namespace Program
 
             
 
+       
+
+
+            
+
+
+
         }
-}
+
+
+
+
+        private void linklabel1_LinkClicked(object sender, EventArgs e)
+
+
+
+        {
+
+
+
+            
+
+
+
+        }
+    }
+} 
+
